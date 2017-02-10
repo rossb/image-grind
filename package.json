@@ -1,0 +1,20 @@
+{
+  "name": "image-grinder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {},
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.1.4",
+    "concurrent-transform": "^1.0.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-gm": "^0.0.8",
+    "gulp-image-resize": "^0.12.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-imageoptim": "^1.0.8",
+    "gulp-rename": "^1.2.2",
+    "os": "^0.1.1",
+    "run-sequence": "^1.2.2"
+  }
+}
