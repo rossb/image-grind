@@ -14,6 +14,7 @@
     "gulp-imagemin": "^3.1.1",
     "gulp-imageoptim": "^1.0.8",
     "gulp-rename": "^1.2.2",
+    "imageoptim-cli": "^1.14.9",
     "os": "^0.1.1",
     "run-sequence": "^1.2.2"
   }

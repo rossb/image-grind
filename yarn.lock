@@ -1116,6 +1116,10 @@ imageoptim-cli@^1.14.8:
   version "1.14.8"
   resolved "https://registry.yarnpkg.com/imageoptim-cli/-/imageoptim-cli-1.14.8.tgz#d93221506b1ebb7c38f14fd418ea8c9b4287e804"
 
+imageoptim-cli@^1.14.9:
+  version "1.14.9"
+  resolved "https://registry.yarnpkg.com/imageoptim-cli/-/imageoptim-cli-1.14.9.tgz#43d9f84db2df5690f9f17ba31304a5f1ec3b8be9"
+
 indent-string@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-2.1.0.tgz#8e2d48348742121b4a8218b7a137e9a52049dc80"

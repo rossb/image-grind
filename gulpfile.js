@@ -14,11 +14,13 @@ const async = require('async');
 // const resizeRange = [320,640,750,828,1024,1280,1534];
 // const resizeRange = [45,90,150,240,320,480,640,750,828,1024,1200,1534,1800];
 // const resizeRange = [768,1200,1400,1536,1800,2000,2200,2400,2600];
-const resizeRange = [768,828,1024,1280,1536,1700,1800,1900,2048];
+// const resizeRange = [768,828,1024,1280,1536,1700,1800,1900,2048];
+// const resizeRange = [2000];
+const resizeRange = [3000];
 
 function resizeImagesByWidth(imageSize, done) {
 
-  console.log(`⏲ resizing ${imageSize}…`);
+  console.log(`⏲  resizing ${imageSize}…`);
 
   gulp.src('in/**/*.{jpg,png,gif}')
     .pipe(parallel(
@@ -43,7 +45,7 @@ function resizeImagesByWidth(imageSize, done) {
 
 function resizeImagesByHeight(imageSize, done) {
 
-  console.log(`⏲ resizing ${imageSize}…`);
+  console.log(`⏲  resizing ${imageSize}…`);
 
   gulp.src('in/**/*.{jpg,png,gif}')
     .pipe(parallel(
@@ -68,7 +70,7 @@ function resizeImagesByHeight(imageSize, done) {
 
 gulp.task('resize', function(cb) {
 
-  del.sync('out-sized');
+  // del.sync('out-sized');
 
   async.eachSeries(resizeRange, resizeImagesByWidth, function(err) {
   // async.eachSeries(resizeRangeHeight, resizeImagesByHeight, function(err) {
@@ -81,15 +83,15 @@ gulp.task('resize', function(cb) {
 
 gulp.task('compress:imageoptim', function(cb) {
 
-  del.sync('out-compressed');
+  // del.sync('out-compressed');
 
-  gulp.src('out-sized/**/*')
+  gulp.src('in/**/*')
     .pipe(gulp.dest('out-compressed'));
 
   const exec = require('child_process').exec;
 
   // https://www.npmjs.com/package/imageoptim-cli#usage
-  exec('imageoptim --image-alpha --jpeg-mini --quit -d ./out-compressed', function(err) {
+  exec('./node_modules/imageoptim-cli/bin/imageOptim --image-alpha --jpeg-mini --quit -d ./out-compressed', function(err) {
     if (err) return cb(err);
     console.log(`Images compressed 🎉`);
     return cb();
@@ -100,7 +102,7 @@ gulp.task('compress:imageoptim', function(cb) {
 // (VERY) POOR RESULTS COMPARED TO IMAGEOPTIM
 gulp.task('compress:imagemin', function(cb) {
 
-  del.sync('out-imagemin');
+  // del.sync('out-imagemin');
 
   return gulp.src('out-sized/**/*')
     .pipe(imagemin())
