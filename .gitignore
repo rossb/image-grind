@@ -1,1 +1,7 @@
 node_modules
+in
+!in/.gitkeep
+out-compressed
+!out-compressed/.gitkeep
+out-sized
+!out-sized/.gitkeep
